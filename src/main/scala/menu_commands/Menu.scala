@@ -5,34 +5,21 @@ object Menu {
   val rows = 20
   val cols = 20
   
-  var players= Queue("Orange", "Magenta", "Lime", "Aqua")
+  //var players= Queue("Orange", "Magenta", "Lime", "Aqua")
+  var players = new PlayerOrder()
   
   def showGameArea : String = {
-            var board = "Board:\n"
-            for (i <- 0 until rows) {
-              for (j <- 0 until cols) {
-                board += "[ ]"
-              }
-              board += "\n"
-            }
-            board += "\n" +
-            "Scores:\n" +
-            "Orange = 0, Magenta = 0, Lime = 0, Aqua = 0\n" +
-            "\n" +
-            "Tiles In Hand:\n" +
-            "Orange = 100, Magenta = 100, Lime = 100, Aqua = 100\n"
-            return board
+    var result = Board.show
+    result += Scoreboard.show
+    result += TilesRemaining.show
+    result
   }
   
   def showPlayerOrder : String = {
-    var result = ""    
-    for (p <- players.toArray) 
-      result = result + p + ", "
-    result.substring(0, result.length-2)  
+    players.show 
   }
   
   def advancePlayerOrder : String = {
-    players += players.dequeue()
-    showPlayerOrder
+    players.advance
   }
 }
