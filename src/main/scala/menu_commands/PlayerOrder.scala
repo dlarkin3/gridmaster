@@ -1,6 +1,6 @@
 package menu_commands
 
-class PlayerOrder extends scala.collection.mutable.Queue[Player]{
+object PlayerOrder extends scala.collection.mutable.Queue[Player]{
   this.enqueue(new Player("Orange"))
   this.enqueue(new Player("Magenta"))
   this.enqueue(new Player("Lime"))

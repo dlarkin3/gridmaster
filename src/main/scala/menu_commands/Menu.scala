@@ -6,7 +6,8 @@ object Menu {
   val cols = 20
   
   //var players= Queue("Orange", "Magenta", "Lime", "Aqua")
-  var players = new PlayerOrder()
+  //var players= Queue("Orange", "Magenta", "Lime", "Aqua")
+  //var players = new PlayerOrder(//var players = new PlayerOrder()
   
   def showGameArea : String = {
     var result = Board.show
@@ -16,10 +17,10 @@ object Menu {
   }
   
   def showPlayerOrder : String = {
-    players.show 
+    PlayerOrder.show 
   }
   
   def advancePlayerOrder : String = {
-    players.advance
+    PlayerOrder.advance
   }
 }

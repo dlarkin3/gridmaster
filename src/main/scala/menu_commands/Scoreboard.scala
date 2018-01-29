@@ -3,7 +3,10 @@ package menu_commands
 object Scoreboard {
   
   def show ={
-    var result = "Scores:\nOrange = 0, Magenta = 0, Lime = 0, Aqua = 0\n\n"
-    result  
+    var result = "Scores:\n"
+    for (p <- PlayerOrder){
+      result += p.name + " = " + p.score + ", "
+    }
+    result.substring(0, result.length-2)+"\n\n"
   }
 }

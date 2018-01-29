@@ -3,7 +3,10 @@ package menu_commands
 object TilesRemaining {
 
   def show ={
-    var result = "Tiles In Hand:\nOrange = 100, Magenta = 100, Lime = 100, Aqua = 100\n"
-    result
+    var result = "Tiles In Hand:\n"
+    for (p <- PlayerOrder){
+      result += p.name + " = " + p.tiles + ", "
+    }
+    result.substring(0, result.length-2)+"\n"
   }
 }
